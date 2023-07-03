@@ -26,8 +26,7 @@ Fixed::Fixed(const int value): value(value * ft_pow(2, this->frac)) {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float value): value(value * ft_pow(2, this->frac)) {
-	this->value = roundf(value * ft_pow(2, this->frac));
+Fixed::Fixed(const float value): value(roundf(value * ft_pow(2, this->frac))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 
