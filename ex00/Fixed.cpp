@@ -3,20 +3,20 @@
 const int	Fixed::frac = 8;
 
 Fixed::Fixed(void): value(0) {
-	std::cout << "Fixed object created with default constructor" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Fixed object destroyed" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & copy) {
-	std::cout << "Fixed object copied" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy) {
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "Assignation operator called" << std::endl;
 	this->value = copy.getRawBits();
 	return (*this);
 }

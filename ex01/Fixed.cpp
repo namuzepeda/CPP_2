@@ -19,23 +19,24 @@ static	float ft_pow(float base, int exp) {
 const int	Fixed::frac = 8;
 
 Fixed::Fixed(void): value(0) {
-	std::cout << "Fixed object created with default constructor" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value): value(value * ft_pow(2, this->frac)) {
-	std::cout << "Fixed object created with int constructor" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float value): value(value * ft_pow(2, this->frac)) {
-	std::cout << "Fixed object created with float constructor" << std::endl;
+	this->value = roundf(value * ft_pow(2, this->frac));
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Fixed object destroyed" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & copy) {
-	std::cout << "Fixed object copied" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
@@ -60,7 +61,7 @@ float	Fixed::toFloat(void) const {
 }
 
 Fixed	&Fixed::operator=(Fixed const &copy) {
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "Assignation operator called" << std::endl;
 	this->value = copy.getRawBits();
 	return (*this);
 }
