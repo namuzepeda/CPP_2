@@ -22,7 +22,9 @@ Fixed::Fixed(void): value(0) {}
 
 Fixed::Fixed(const int value): value(value * ft_pow(2, this->frac)) {}
 
-Fixed::Fixed(const float value): value(value * ft_pow(2, this->frac)) {}
+Fixed::Fixed(const float value): value(value * ft_pow(2, this->frac)) {
+	this->value = roundf(this->value);
+}
 
 Fixed::~Fixed(void) {}
 
